@@ -30,18 +30,18 @@ $calculateTotalTime.onclick = function(){
     let totalSeconds = calculateTotalSeconds()
     
     if(totalSeconds >= 60){
-        for (let i = totalSeconds; i >= 60; i-= 60){
-            totalSeconds = i
-            minutes++
+        while(totalSeconds >= 60){
+            totalSeconds = totalSeconds - 60
+            totalMinutes++
         }
     }
 
     let totalMinutes  = calculateTotalMinutes()
 
     if(totalMinutes >= 60){
-        for(let i = totalMinutes; i>60; i-=60){
-            totalMinutes = i
-            hour++
+        while(totalMinutes >= 60){
+            totalMinutes = totalMinutes - 60
+            totalHour++
         }
     }
 
