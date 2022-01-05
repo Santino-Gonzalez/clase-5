@@ -3,6 +3,13 @@ html, body {
     padding: 0;
 }
 
+strong {
+    font-size: 40px;
+}
+
+
+
+
 #title{
     font-size: 30px;
 }
