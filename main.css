@@ -1,6 +1,12 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: red;
+}
+
+
+body{
+    font-size: 300%;
 }
 
 html {
@@ -9,7 +15,6 @@ html {
 
 body {
     align-items: center;
-    background: #EFEFEF;
     display: flex;
     flex-direction: column;
     font-family: Avenir, 'Source Sans Pro', sans-serif;
@@ -45,7 +50,6 @@ img {
 }
 
 a {
-    color: #DA3296;
     text-decoration: none;
 }
 
@@ -73,13 +77,11 @@ main a {
 }
 
 footer {
-    background-color: #7986e5;
     padding: 1rem 1rem 2rem;
     width: 100%;
 }
 
 footer > div {
-    color: white;
     display: flex;
     flex-direction: row;
     font-family: Avenir, 'Source Sans Pro', sans-serif;
@@ -105,7 +107,6 @@ footer span {
 }
 
 footer a {
-    color: white;
     font-style: italic;
     text-decoration: none;
 }
@@ -115,7 +116,6 @@ footer a:hover {
 }
 
 #surprise {
-    color: red;
     font-size: 2.25rem;
 }
 

@@ -6,8 +6,8 @@ const textMostFrequentNumber = document.querySelector("#most-frequent-number")
 
 function convertNumbersToArray(listOfNumbers){
     let array = []
-    for(let i = 0; i <= listOfNumbers.length; i++){
-        array.push(Number(listOfNumbers[i]))
+    for(let i = 0; i < listOfNumbers.length; i++){
+        array.push(Number(listOfNumbers[i].innerText))
     }
     return array
 }
@@ -17,10 +17,11 @@ let finalArray = convertNumbersToArray(numbers)
 
 function calculateAverageOfArray(array){
     let average = 0
-    for(let i = 0; i <= array.length; i++){
-        average += Number()
+    for(let i = 0; i < array.length; i++){
+        average = average + Number(array[i])
     }
-    return average / array.length
+    average = average / array.length
+    return average
 }
 
 let averageNumber = calculateAverageOfArray(finalArray)
@@ -28,7 +29,7 @@ let averageNumber = calculateAverageOfArray(finalArray)
 
 function calculateSmallestNumber(array){
     let smallNumber = array[0]
-    for(let i = 0; i <= array.length; i++){
+    for(let i = 0; i < array.length; i++){
         if(array[i] < smallNumber){
             smallNumber = array[i]
         }
@@ -40,8 +41,8 @@ let smallestNumber = calculateSmallestNumber(finalArray)
 
 function calculateBiggestNumber(array){
     let bigNumber = array[0]
-    for(let i = 0; i <= array.length; i++){
-        if(array[i] < bigNumber){
+    for(let i = 0; i < array.length; i++){
+        if(array[i] > bigNumber){
             bigNumber = array[i]
         }
     }
@@ -54,8 +55,8 @@ function calculateMostRepeatedNumber(array){
     let higherReps = 1
     let appearances = 0
     let moreRepeated
-    for(let i = 0; i <= array.length; i++){
-        for(let j = 0; j <= array.length; j++){
+    for(let i = 0; i < array.length; i++){
+        for(let j = 0; j < array.length; j++){
             if(array[i] === array[j]){
                 appearances++
             }
