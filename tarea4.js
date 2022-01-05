@@ -1,32 +1,78 @@
-const array1 = [4, 1, 73, 6, 9]
-const array2 = [5, 6, 53, 4, 7]
-const array3 = [4, 1, 7, 6, 20]
-const array4 = [5, 9, 3, 1, 3]
+const numbers = document.querySelectorAll("li")
+const textAverageNumber = document.querySelector("#average-number")
+const textSmallestNumber = document.querySelector("#smallest-number")
+const textBiggerNumber = document.querySelector("#bigger-number")
+const textMostFrequentNumber = document.querySelector("#most-frequent-number")
 
-document.querySelector("#array-1").innerText = array1
-document.querySelector("#array-2").innerText = array2
-document.querySelector("#array-3").innerText = array3
-document.querySelector("#array-4").innerText = array4
-
-const totalArray = [...array1, ...array2, ...array3, ...array4]
-
-let smallestNumber = Math.min(...totalArray)
-let biggestNumber = Math.max(...totalArray)
-let average = 0
-
-for(let i = 0; i <= totalArray.length; i++){
-    average = average + totalArray[i]
+function convertNumbersToArray(listOfNumbers){
+    let array = []
+    for(let i = 0; i <= listOfNumbers.length; i++){
+        array.push(Number(listOfNumbers[i]))
+    }
+    return array
 }
 
-average = average / totalArray.length
-
-document.querySelector("#smallest-number").innerText = `El numero mas pequeño es ${smallestNumber}`
-document.querySelector("#bigger-number").innerText = `El numero mas grande es ${biggestNumber}`
-document.querySelector("#average-number").innerText = `El numero promedio es ${average}`
+let finalArray = convertNumbersToArray(numbers)
 
 
+function calculateAverageOfArray(array){
+    let average = 0
+    for(let i = 0; i <= array.length; i++){
+        average += Number()
+    }
+    return average / array.length
+}
+
+let averageNumber = calculateAverageOfArray(finalArray)
 
 
+function calculateSmallestNumber(array){
+    let smallNumber = array[0]
+    for(let i = 0; i <= array.length; i++){
+        if(array[i] < smallNumber){
+            smallNumber = array[i]
+        }
+    }
+    return smallNumber
+}
 
+let smallestNumber = calculateSmallestNumber(finalArray)
 
+function calculateBiggestNumber(array){
+    let bigNumber = array[0]
+    for(let i = 0; i <= array.length; i++){
+        if(array[i] < bigNumber){
+            bigNumber = array[i]
+        }
+    }
+    return bigNumber
+}
+
+let biggestNumber = calculateBiggestNumber(finalArray)
+
+function calculateMostRepeatedNumber(array){
+    let higherReps = 1
+    let appearances = 0
+    let moreRepeated
+    for(let i = 0; i <= array.length; i++){
+        for(let j = 0; j <= array.length; j++){
+            if(array[i] === array[j]){
+                appearances++
+            }
+            if(appearances > higherReps){
+                higherReps = appearances
+                moreRepeated = array[i]
+            }
+        }
+        appearances = 0
+    }
+    return moreRepeated
+}
+
+let mostRepeatedNumber = calculateMostRepeatedNumber(finalArray)
+
+textAverageNumber.textContent = `El numero promedio es ${averageNumber}`
+textSmallestNumber.textContent = `El numero mas pequeño es ${smallestNumber}`
+textBiggerNumber.textContent = `El numero mas grande es ${biggestNumber}`
+textMostFrequentNumber.textContent = `El numero que mas se repite es ${mostRepeatedNumber}`
 
