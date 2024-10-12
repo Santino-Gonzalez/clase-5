@@ -12,5 +12,5 @@ function calcularSalarioMensual(salarioAnual){
 
 document.querySelector("#botonCalcular").onclick = function(){
   $salarioMensual.value = calcularSalarioMensual($salarioAnual.value);
-  return false;
+  event.preventDefault();
 }

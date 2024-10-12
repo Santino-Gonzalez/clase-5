@@ -29,5 +29,5 @@ document.querySelector("#botonCalcular").onclick = function (){
 
     document.querySelector("#tiempoTotal").innerHTML = `${totalHoras}hrs ${totalMinutos}mins ${totalSegundos}segs`
     
-    return false;
+    event.preventDefault();
 }

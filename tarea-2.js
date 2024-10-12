@@ -17,6 +17,6 @@ const $datosUsuario = document.querySelector("#datosUsuario");
 document.querySelector("#botonIngresar").onclick = function(){
     $bienvenida.innerHTML = `Bienvenido, ${$primerNombre.value}`
     $datosUsuario.innerHTML = `El nombre del usuario es: ${$primerNombre.value} ${$segundoNombre.value} ${$apellidos.value} y tiene ${$edad.value} años.`;
-    return false;
+    event.preventDefault();
 }
 
